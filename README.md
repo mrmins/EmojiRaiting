@@ -23,4 +23,5 @@ And, that's all!!!
 
 Now, you have a control like this:
 
-![alt text](https://imgur.com/a/iFjFQ)
+<img src="https://imgur.com/a/iFjFQ" width="350"/>
+
