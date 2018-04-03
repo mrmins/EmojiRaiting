@@ -22,6 +22,4 @@ $("#emoji-div").emoji();
 And, that's all!!!
 
 Now, you have a control like this:
-
-<img src="https://imgur.com/a/iFjFQ" width="350"/>
-
+![Screenshot](https://imgur.com/a/iFjFQ)
