@@ -27,7 +27,7 @@ https://imgur.com/a/iFjFQ
 # Configuration
 
 ```
-var emojis = ['&#x1F620;']; //array of emojis.`
+var emojis = ['&#x1F620;']; //array of emojis.
 
 $("#emoji-div").emoji({`
     opacity: 0.5, //Opacity for no selected value.
