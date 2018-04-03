@@ -43,6 +43,10 @@ $("#emoji-div").emoji({`
 #Events
 
 Enable emoji control: `$("#emoji-div").emoji("enable");`
+
 Disable emoji control: `$("#emoji-div").emoji("disable");`
+
 Get emoji control value: `$("#emoji-div").emoji("getvalue");`
+
 Set emoji control value: `$("#emoji-div").emoji("setvalue", 5);`
+
