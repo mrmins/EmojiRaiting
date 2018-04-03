@@ -9,6 +9,15 @@ First one, you require Jquery.
 
 Your HTML file:
 
+Import the `emoji.js` file to your html.
+
+```
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="emoji.js"></script>
+```
+
+Add a div, to render you emoji control.
+
 `<div id="emoji-div"></div>`
 
 That's is all you need to render your emojis.
@@ -83,3 +92,6 @@ Set emoji control value: `$("#emoji-div").emoji("setvalue", 5);`
 Not enough?
 Check a list, try this UTF-8 emoji list:
 https://www.w3schools.com/charsets/ref_utf_misc_symbols.asp
+
+# Considerations.
+This plugin is under construction, now, it accept id, but in a close future, we going to accept multiple initializations with classes.
