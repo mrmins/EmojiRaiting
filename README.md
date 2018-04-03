@@ -40,7 +40,7 @@ $("#emoji-div").emoji({`
                         
 ```
 
-#Events
+# Events
 
 Enable emoji control: `$("#emoji-div").emoji("enable");`
 
