@@ -22,6 +22,5 @@ $("#emoji-div").emoji();
 And, that's all!!!
 
 Now, you have a control like this:
-![picture](https://imgur.com/a/iFjFQ)
-![My image](https://imgur.com/a/iFjFQ)
+https://imgur.com/a/iFjFQ
 
