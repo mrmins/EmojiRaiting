@@ -35,7 +35,7 @@ https://imgur.com/a/iFjFQ
 
 <img src="http://i.imgur.com/khAYcYh.png" />
 
-# Configuration
+# Customization
 
 ```
 var emojis = ['&#x1F620;']; //array of emojis.
