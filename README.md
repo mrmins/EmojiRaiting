@@ -40,7 +40,7 @@ https://imgur.com/a/iFjFQ
 ```
 var emojis = ['&#x1F620;']; //array of emojis.
 
-$("#emoji-div").emoji({`
+$("#emoji-div").emoji({
     opacity: 0.5, //Opacity for no selected value.
     val: 4,  //Selected value
     width: '35px',  //With of each emoji.
