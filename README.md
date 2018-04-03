@@ -50,3 +50,34 @@ Get emoji control value: `$("#emoji-div").emoji("getvalue");`
 
 Set emoji control value: `$("#emoji-div").emoji("setvalue", 5);`
 
+# Emtoticons
+
+&#x1F61E; `&#x1F61E;` Happy
+
+&#x1F610; `"&#x1F610;` Meh
+
+&#x1F60A; `&#x1F60A;` Happy
+
+&#x1F603; `&#x1F603;` Smile
+
+&#x1F606; `&#x1F606;` Laughing
+
+&#x1F60D; `&#x1F60D;` Inlove
+
+&#x2764; `&#x2764;` Heart
+
+&#x1F622; `&#x1F622;` Crying
+
+&#x2B50; `&#x2B50;` Star
+
+&#x1F4A9; `&#x1F4A9;` Poop
+
+&#x1F63A; `&#x1F63A;` Cat
+
+&#x1F44D; `&#x1F44D;` Like
+
+&#x1F44E; `&#x1F44E;` Dislike
+
+Not enough?
+Check a list, try this UTF-8 emoji list:
+https://www.w3schools.com/charsets/ref_utf_misc_symbols.asp
