@@ -24,6 +24,8 @@ And, that's all!!!
 Now, you have a control like this:
 https://imgur.com/a/iFjFQ
 
+<img src="http://i.imgur.com/khAYcYh.png" />
+
 # Configuration
 
 ```
