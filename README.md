@@ -30,14 +30,13 @@ https://imgur.com/a/iFjFQ
 var emojis = ['&#x1F620;']; //array of emojis.`
 
 $("#emoji-div").emoji({`
-                        opacity: 0.5, //Opacity for no selected value.
-                        val: 4,  //Selected value
-                        width: '35px',  //With of each emoji.
-                        event: 'click',  //Event "click" or "mouseover".
-                        count: 7, //In case you want set 1 emoji in the array and display N number of them.
-                        emojis: emojis  //In case you want to define your own list of emojis
-                        
-                        });
+    opacity: 0.5, //Opacity for no selected value.
+    val: 4,  //Selected value
+    width: '35px',  //With of each emoji.
+    event: 'click',  //Event "click" or "mouseover".
+    count: 7, //In case you want set 1 emoji in the array and display N number of them.
+    emojis: emojis  //In case you want to define your own list of emojis
+});
                         
 ```
 
