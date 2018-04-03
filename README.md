@@ -24,3 +24,26 @@ And, that's all!!!
 Now, you have a control like this:
 https://imgur.com/a/iFjFQ
 
+# Configuration
+
+```
+var emojis = ['&#x1F620;']; //array of emojis.`
+
+$("#emoji-div").emoji({`
+                        opacity: 0.5, //Opacity for no selected value.
+                        val: 4,  //Selected value
+                        width: '35px',  //With of each emoji.
+                        event: 'click',  //Event "click" or "mouseover".
+                        count: 7, //In case you want set 1 emoji in the array and display N number of them.
+                        emojis: emojis  //In case you want to define your own list of emojis
+                        
+                        });
+                        
+```
+
+#Events
+
+Enable emoji control: `$("#emoji-div").emoji("enable");`
+Disable emoji control: `$("#emoji-div").emoji("disable");`
+Get emoji control value: `$("#emoji-div").emoji("getvalue");`
+Set emoji control value: `$("#emoji-div").emoji("setvalue", 5);`
