@@ -45,14 +45,16 @@
     if(configuration.emojis.length == 0){
       return;
     }
-    if(configuration.count > 0 && configuration.emojis.length != configuration.count){
+    if(configuration.emojis.length != configuration.count) {
       var tempEmojiArray = [];
       var lastEmoji = '';
-      for(var i=0; i<configuration.count; i++){
+      var counter = (configuration.count == 0) ? configuration.emojis.length : configuration.count;
+      for(var i=0; i<counter; i++){
         if( i < (configuration.emojis.length)){
           lastEmoji = findEmojiByName(configuration.emojis[i]);
           tempEmojiArray.push(lastEmoji);
         }else{
+          lastEmoji = findEmojiByName(configuration.emojis[i]);
           tempEmojiArray.push(lastEmoji);
         }
       }
@@ -118,12 +120,13 @@
     wink: '&#x1F609;',
     laughing: '&#x1F606;',
     inlove: '&#x1F60D;',
-    heart: '&#x2764;',
     crying: '&#x1F622;',
     star: '&#x2B50;',
     poop: '&#x1F4A9;',
     cat: '&#x1F63A;',
     like: '&#x1F44D;',
+    unlike: '&#x1f44e;',
+    heart: '&#x2764',
     dislike: '&#x1F44E;',
     cloud: '&#9729;',
     blackstart: '&#9733;',
