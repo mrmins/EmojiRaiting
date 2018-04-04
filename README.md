@@ -1,157 +1,83 @@
+# EmojiRaiting
+EmojiRating is an open source library to use rate using emoticons.
 
-/**
- *********************************
- * Emotions Rating -Mrmins *
- *********************************
- * Emoji Rating
- * Version: 0.0.2
- * URL: https://github.com/mrmmins/EmojiRaiting
- * Description: Javascript plugin rate using emoticons.
- * Requires: >= 1.9
- * Author: MrMins
- * License: GNU General Public License v3.0
- */
+# How to use it?
+First one, you require Jquery.
 
-;(function($) {
-  $('head').append('<meta charset='utf-8' />');
+# Examples of usage.
+First one, you require Jquery.
 
-  var emojiConfiguration ={
-    opacity: 0.3,
-    val: 3,
-    width: '20px',
-    emojis: ['&#x1F620;','&#x1F61E;','&#x1F610;','&#x1F60A;','&#x1F603;'],
-    event: 'click',
-    disabled: false,
-    count: 0
-  };
-  var configuration;
+Your HTML file:
 
-  $.fn.emoji = function(options, value) {
-    if( options != undefined && !isJson(options) ){
-      if (options == 'disabled' || options == 'disable') {
-        configuration.disabled = true;
-      }else if (options == 'enabled' || options == 'enable') {
-        configuration.disabled = false;
-      } else if (options.toLowerCase()  == 'setvalue'){
-        configuration.val = value;
-        recreateEmojiTable(this, configuration, configuration.emojis, value);
-      } else if (options.toLowerCase()  == 'getvalue'){
-        return configuration.val;
-      }
-      return;
-    }
-    configuration = $.extend(emojiConfiguration, options);
+Import the emoji.js file to your html.
 
-    if(configuration.emojis.length == 0){
-      return;
-    }
-    if(configuration.count > 0 && configuration.emojis.length != configuration.count){
-      var tempEmojiArray = [];
-      var lastEmoji = '';
-      for(var i=0; i<configuration.count; i++){
-        if( i < (configuration.emojis.length)){
-          lastEmoji = findEmojiByName(configuration.emojis[i]);
-          tempEmojiArray.push(lastEmoji);
-        }else{
-          tempEmojiArray.push(lastEmoji);
-        }
-      }
-      configuration.emojis = tempEmojiArray;
-    }
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="emoji.js"></script>
+Add a div, to render you emoji control.
 
-    var element = this;
-    var value = configuration.val;
-    this.each( function() {
-      recreateEmojiTable(element, configuration, configuration.emojis, value);
-    });
+<div id="emoji-div"></div>
 
-    $(element).delegate( '.emoji-table span', configuration.event, function(){
-      if(configuration.disabled)
-        return;
-      var currentState = $(this).closest('table').html() ;
-      recreateEmojiTable(element, configuration, configuration.emojis, $(this).attr('value'));
-    });
+That's is all you need to render your emojis.
 
-    var style = $('<style>.emoji-table span:hover { cursor: pointer; }</style>');
-    $('html > head').append(style);
-  }
+Now, we would use jQuery to init the the emojirating plugin (also you might use javascript).
 
-  function isJson(item) {
-    item = typeof item !== 'string'
-        ? JSON.stringify(item)
-        : item;
+$("#emoji-div").emoji();
 
-    try {
-        item = JSON.parse(item);
-    } catch (e) {
-        return false;
-    }
+And, that's all!!!
 
-    if (typeof item === 'object' && item !== null) {
-        return true;
-    }
+Now, you have a control like this: https://imgur.com/a/iFjFQ
 
-    return false;
-  }
 
-  function recreateEmojiTable(element, conf, emojis, value) {
-    var tds = '';
-    $(element).empty();
-    jQuery.each( emojis, function( i, val ) {
-      if((value -1) < i){
-        tds+='<td><span value='' + (i+1) + '' style='opacity: ' +  conf.opacity + '; font-size: ' + conf.width + ''>' + val + '</span></td>';
-      } else{
-        tds+='<td><span value='' + (i+1) + '' style='font-size: ' +  conf.width + ''>' + val + '</span></td>';
-      }
-      $(element).html('<table class='emoji-table'><tbody><tr>' + tds + '</tr></tbody></table>');
-    });
-    $(element).attr('value', value);
-    configuration.val = value;
-  }
 
-  var emotionsArray = {
-    angry: '&#x1F620;',
-    disappointed: '&#x1F61E;',
-    meh: '&#x1F610;',
-    happy: '&#x1F60A;',
-    smile: '&#x1F603;',
-    wink: '&#x1F609;',
-    laughing: '&#x1F606;',
-    inlove: '&#x1F60D;',
-    heart: '&#x2764;',
-    crying: '&#x1F622;',
-    star: '&#x2B50;',
-    poop: '&#x1F4A9;',
-    cat: '&#x1F63A;',
-    like: '&#x1F44D;',
-    dislike: '&#x1F44E;',
-    cloud: '&#9729;',
-    blackstart: '&#9733;',
-    comet: '&#9732;',
-    umbrella: '&#9748;',
-    skull: '&#9760;',
-    radioactive: '&#9762;',
-    biohazard: '&#9763;',
-    aries: '&#9800;',
-    taurus: '&#9801;',
-    gemini: ' &#9802;',
-    cancer: '&#9803;',
-    leo: '&#9804;',
-    virgo: '&#9805;',
-    libra: '&#9806;',
-    scorpius: '&#9807;',
-    sagittarius: '&#9808;',
-    capricorn: '&#9809;',
-    aquarius: '&#9810;',
-    pisces: '&#9811;'
-  };
+# Customization
+var emojis = ['&#x1F620;']; //array of emojis.
 
-  function findEmojiByName(emojiName) {
-    emojiName = emojiName.toLowerCase();
-    if( emotionsArray[emojiName] != null && emotionsArray[emojiName] != undefined ){
-      return emotionsArray[emojiName];
-    }
-    return emojiName;
-  }
+$("#emoji-div").emoji({
+    opacity: 0.5, //Opacity for no selected value.
+    val: 4,  //Selected value
+    width: '35px',  //With of each emoji.
+    event: 'click',  //Event "click" or "mouseover".
+    emojis: emojis  //In case you want to define your own list of emojis
+    count: 7, //VERY OPTIONAL - In case you want set 1 emoji in the array and display N number of them.
+});
+                        
+# Events
+Enable emoji control: $("#emoji-div").emoji("enable");
 
-}(jQuery));
+Disable emoji control: $("#emoji-div").emoji("disable");
+
+Get emoji control value: $("#emoji-div").emoji("getvalue");
+
+Set emoji control value: $("#emoji-div").emoji("setvalue", 5);
+
+Emtoticons
+😞 &#x1F61E; Happy
+
+😐 "&#x1F610; Meh
+
+😊 &#x1F60A; Happy
+
+😃 &#x1F603; Smile
+
+😆 &#x1F606; Laughing
+
+😍 &#x1F60D; Inlove
+
+❤ &#x2764; Heart
+
+😢 &#x1F622; Crying
+
+⭐ &#x2B50; Star
+
+💩 &#x1F4A9; Poop
+
+😺 &#x1F63A; Cat
+
+👍 &#x1F44D; Like
+
+👎 &#x1F44E; Dislike
+
+Not enough? Check a list, try this UTF-8 emoji list: https://www.w3schools.com/charsets/ref_utf_misc_symbols.asp
+
+# Considerations.
+This plugin is under construction, now, it accepts "id", but in a close future, we going to accept multiple initializations with classes.
