@@ -13,7 +13,7 @@
  */
 
 ;(function($) {
-  $('head').append('<meta charset='utf-8' />');
+  $('head').append('<meta charset="utf-8" />');
 
   var emojiConfiguration ={
     opacity: 0.3,
@@ -99,11 +99,11 @@
     $(element).empty();
     jQuery.each( emojis, function( i, val ) {
       if((value -1) < i){
-        tds+='<td><span value='' + (i+1) + '' style='opacity: ' +  conf.opacity + '; font-size: ' + conf.width + ''>' + val + '</span></td>';
+        tds+='<td><span value="' + (i+1) + '" style="opacity: ' +  conf.opacity + '; font-size: ' + conf.width + '">' + val + '</span></td>';
       } else{
-        tds+='<td><span value='' + (i+1) + '' style='font-size: ' +  conf.width + ''>' + val + '</span></td>';
+        tds+='<td><span value="' + (i+1) + '" style="font-size: ' +  conf.width + '">' + val + '</span></td>';
       }
-      $(element).html('<table class='emoji-table'><tbody><tr>' + tds + '</tr></tbody></table>');
+      $(element).html('<table class="emoji-table"><tbody><tr>' + tds + '</tr></tbody></table>');
     });
     $(element).attr('value', value);
     configuration.val = value;
