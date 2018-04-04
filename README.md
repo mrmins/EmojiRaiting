@@ -51,10 +51,6 @@ Do you want to set 1 emoticon and repeat it?
 var emojis = ['angry']; //array of emojis.
 
 $("#emoji-div").emoji({
-    opacity: 0.5, //Opacity for no selected value.
-    val: 4,  //Selected value
-    width: '35px',  //With of each emoji.
-    event: 'click',  //Event "click" or "mouseover".
     emojis: emojis  //In case you want to define your own list of emojis
     count: 7, //VERY OPTIONAL - In case you want set 1 emoji in the array and display N number of them.
 });
@@ -72,7 +68,7 @@ $("#emoji-div").emoji({emojis: emojis });
 Full configuration.
 ```
 $("#emoji-div").emoji({
-    opacity: 0.5, //Opacity for no selected value.
+    opacity: 0.5, //Opacity for no selected value. [The value should be between 0 and 1 (like 0.5)]
     val: 4,  //Selected value
     width: '35px',  //With of each emoji.
     event: 'click',  //Event "click" or "mouseover".
