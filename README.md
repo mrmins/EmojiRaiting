@@ -85,6 +85,28 @@ Do you want to set an initial value?
 $("#emoji-div").emoji({ val: 4 });
 ```
 
+Do you want to add color to your emojis?
+1. Using the color name.
+```
+var emojis = ['heart'];
+$("#emoji-div").emoji({ emojis:emojis, color: 'red' });
+```
+
+2. Using the HexColor.
+```
+var emojis = ['heart'];
+$("#emoji-div").emoji({ emojis: emojis, color: '#123abc' });
+```
+
+3. Using the RGB value.
+```
+var emojis = ['heart'];
+$("#emoji-div").emoji({ emojis: emojis, color: 'rgb(255, 0, 0)' });
+```
+
+The result:
+<img src='https://i.imgur.com/TRZ4kNU.png' />
+
 Full configuration.
 ```
 $("#emoji-div").emoji({
@@ -92,6 +114,7 @@ $("#emoji-div").emoji({
     val: 4,  //Selected value
     width: '35px',  //With of each emoji.
     event: 'click',  //Event "click" or "mouseover".
+    color: 'red', //Use color name (red, blue, black, etc.), HexColor (#abc123, #cecece, #b35c22) or RGB like rgb(255, 0, 0)
     emojis: emojis  //In case you want to define your own list of emojis
     count: 7, //VERY OPTIONAL - In case you want set 1 emoji in the array and display N number of them.
 });
