@@ -74,6 +74,7 @@ Do you want to combine emoticions names and unicode characters? Feel free to do 
 var emojis = ['skull','happy','cloud','&#x1F60A;','&#x1F603;', '&#9760;'];
 $("#emoji-div").emoji({emojis: emojis });
 ```
+<img src ='https://i.imgur.com/CqcCv4d.png' />
 
 Do you want your emojis bigger?
 
