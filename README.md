@@ -235,6 +235,9 @@ Not enough? Check a list, try this UTF-8 emoji list: https://www.w3schools.com/c
 <img src='https://www.dokuwiki.org/lib/exe/fetch.php?tok=d9fa04&media=https%3A%2F%2Fraw.githubusercontent.com%2Ftschinz%2Fdokuwiki_paypal_plugin%2Fmaster%2Flogo.jpg' />
 </a>
 
+# Do you want some improves?
+Feel free to write ussues or new actions you want to get in this pluging.
+
 
 # Considerations.
 This plugin is under construction, now, it accepts "id", but in a close future, we going to accept multiple initializations with classes.
