@@ -25,7 +25,7 @@ Now, we have to use jQuery to init the the emojirating plugin.
 ```
 $("#emoji-div").emoji();
 ```
-You can invoke it from a method, or from your `onLoad`
+You can invoke it from a method, or from your `onLoad` for `javascript` or `onReady` for `jQuery`
 
 ```
 $(function() {
@@ -50,13 +50,8 @@ $("#emoji-div").emoji({emojis: emojis });
 
 Do you want to set 1 emoticon and repeat it?
 ```
-var emojis = ['inlove']; //array of emojis.
-
-$("#emoji-div").emoji({
-    emojis: emojis  //In case you want to define your own list of emojis
-    val: 6,
-    count: 8, //VERY OPTIONAL - In case you want set 1 emoji in the array and display N number of them.
-});
+var emojis = ['inlove'];
+$("#emoji-div").emoji({ emojis: emojis, val: 6, count: 8 });
 ```
 <img src='https://i.imgur.com/svelH28.png' />
 
@@ -91,19 +86,19 @@ Do you want to set color to your emojis?
 1. Using the color name.
 ```
 var emojis = ['heart'];
-$("#emoji-div").emoji({ emojis:emojis, color: 'red' });
+$("#emoji-div").emoji({ emojis:emojis, count: 8, color: 'red' });
 ```
 
 2. Using the HexColor.
 ```
 var emojis = ['heart'];
-$("#emoji-div").emoji({ emojis: emojis, color: '#123abc' });
+$("#emoji-div").emoji({ emojis: emojis, count: 8, color: '#123abc' });
 ```
 
 3. Using the RGB value.
 ```
 var emojis = ['heart'];
-$("#emoji-div").emoji({ emojis: emojis, color: 'rgb(255, 0, 0)' });
+$("#emoji-div").emoji({ emojis: emojis, count: 8, color: 'rgb(255, 0, 0)' });
 ```
 
 <img src='https://i.imgur.com/TRZ4kNU.png' />
