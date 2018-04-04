@@ -32,7 +32,7 @@ $("#emoji-div").emoji();
 
 And, that's all!!!
 
-Now, you have a control like this: https://imgur.com/a/iFjFQ
+Now, you have a control like this
 
 <img src="https://i.imgur.com/khAYcYh.png" />
 
