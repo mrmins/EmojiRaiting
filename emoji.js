@@ -4,7 +4,7 @@
  * Emotions Rating -Mrmins *
  *********************************
  * Emoji Rating
- * Version: 0.0.3
+ * Version: 0.0.4
  * URL: https://github.com/mrmmins/EmojiRaiting
  * Description: Javascript plugin rate using emoticons.
  * Requires: >= 1.9
@@ -13,35 +13,51 @@
  */
 
 ;(function($) {
+  if( !window.jQuery ){
+    console.error('Jquery wanst loaded in your project.');
+    return;
+  }
   $('head').append('<meta charset="utf-8" />');
 
   var emojiConfiguration ={
     opacity: 0.3,
-    val: 3,
+    value: 3,
     width: '20px',
     emojis: ['&#x1F620;','&#x1F61E;','&#x1F610;','&#x1F60A;','&#x1F603;'],
     event: 'click',
     disabled: false,
     count: 0,
-    color: ''
+    color: '',
+    debug: false
   };
   var configuration;
 
   $.fn.emoji = function(options, value) {
     if( options != undefined && !isJson(options) ){
+      options = options.toLowerCase();
       if (options == 'disabled' || options == 'disable') {
         configuration.disabled = true;
       }else if (options == 'enabled' || options == 'enable') {
         configuration.disabled = false;
       } else if (options.toLowerCase()  == 'setvalue'){
-        configuration.val = value;
+        configuration.value = value;
         recreateEmojiTable(this, configuration, configuration.emojis, value);
       } else if (options.toLowerCase()  == 'getvalue'){
-        return configuration.val;
+        return configuration.value;
       }
       return;
     }
+
     configuration = $.extend(emojiConfiguration, options);
+    configuration.event = configuration.event.toLowerCase();
+
+    if(configuration.value > configuration.count && configuration.value > configuration.emojis.length && configuration.debug){
+      console.error('The default value is higher to the number of elements in the array (or count property in case you have it defined).');
+    }
+    if(configuration.event != 'click' || configuration.event != 'mouseover'){
+      configuration.event = 'click';
+      console.warn('Wrong event name. Automatically overrode to "click" event.');
+    }
 
     if(configuration.emojis.length == 0){
       return;
@@ -63,7 +79,7 @@
     }
 
     var element = this;
-    var value = configuration.val;
+    var value = configuration.value;
     this.each( function() {
       recreateEmojiTable(element, configuration, configuration.emojis, value);
     });
@@ -115,7 +131,7 @@
       $(element).html('<table class="emoji-table"><tbody><tr>' + tds + '</tr></tbody></table>');
     });
     $(element).attr('value', value);
-    configuration.val = value;
+    configuration.value = value;
     if(callback!= undefined){
       callback(value);
     }
