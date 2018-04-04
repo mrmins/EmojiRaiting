@@ -83,32 +83,44 @@ Get emoji control value: `$("#emoji-div").emoji("getvalue");`
 
 Set emoji control value: `$("#emoji-div").emoji("setvalue", 5);`
 
-Emtoticons
-😞 `&#x1F61E;` Happy
 
-😐 `&#x1F610;` Meh
+# Pre-defined emtoticons
+angry  `&#x1F620;` &#x1F620;
+disappointed  `&#x1F61E;`  &#x1F61E;
+meh  `&#x1F610;`  &#x1F610;
+happy  `&#x1F60A;` &#x1F60A;
+smile  `&#x1F603;` &#x1F603;
+wink  `&#x1F609;` &#x1F609;
+laughing  `&#x1F606;` &#x1F606;
+inlove  `&#x1F60D;` &#x1F60D;
+crying  `&#x1F622;` &#x1F622;
+star  `&#x2B50;` &#x2B50;
+poop  `&#x1F4A9;` &#x1F4A9;
+cat  `&#x1F63A;` &#x1F63A;
+like  `&#x1F44D;` &#x1F44D;
+unlike  `&#x1f44e;` &#x1f44e;
+heart  `&#x2764` &#x2764
+dislike  `&#x1F44E;` &#x1F44E;
+cloud  `&#9729;` `&#9729;
+blackstart  `&#9733;` &#9733; 
+comet  `&#9732;` &#9732;
+umbrella  `&#9748;` &#9748; 
+skull  `&#9760;` &#9760; 
+radioactive  `&#9762;` &#9762; 
+biohazard  `&#9763;` &#9763;
+aries  `&#9800;` &#9800; 
+taurus  `&#9801;` &#9801; 
+gemini  ` &#9802;` &#9802;
+cancer  `&#9803;` &#9803; 
+leo  `&#9804;` &#9804; 
+virgo  `&#9805;` &#9805;
+libra  `&#9806;` &#9806; 
+scorpius  `&#9807;` &#9807;
+sagittarius  `&#9808;` &#9808;
+capricorn  `&#9809;` &#9809;
+aquarius  `&#9810;` &#9810;
+pisces  `&#9811;` &#9811;
 
-😊 `&#x1F60A;` Happy
-
-😃 `&#x1F603;` Smile
-
-😆 &#x1F606;` Laughing
-
-😍 `&#x1F60D;` Inlove
-
-❤ `&#x2764;` Heart
-
-😢 `&#x1F622;` Crying
-
-⭐ `&#x2B50;` Star
-
-💩 `&#x1F4A9;` Poop
-
-😺 `&#x1F63A;` Cat
-
-👍 `&#x1F44D;` Like
-
-👎 `&#x1F44E;` Dislike
 
 Not enough? Check a list, try this UTF-8 emoji list: https://www.w3schools.com/charsets/ref_utf_misc_symbols.asp
 
