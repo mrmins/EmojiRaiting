@@ -78,6 +78,11 @@ var emojis = ['skull','happy','cloud','&#x1F60A;','&#x1F603;', '&#9760;'];
 $("#emoji-div").emoji({emojis: emojis, width: '50px' });
 ```
 
+Do you want to set an initial value?
+```
+$("#emoji-div").emoji({ val: 4 });
+```
+
 Full configuration.
 ```
 $("#emoji-div").emoji({
@@ -185,3 +190,4 @@ Not enough? Check a list, try this UTF-8 emoji list: https://www.w3schools.com/c
 
 # Considerations.
 This plugin is under construction, now, it accepts "id", but in a close future, we going to accept multiple initializations with classes.
+And, feel free to use this javascript library whatever you want, but, please, keep your codes open to the world.
