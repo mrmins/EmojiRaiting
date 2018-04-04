@@ -1,10 +1,10 @@
 
 /**
  *********************************
- * Emotions Rating - Mrmins *
+ * Emotions Rating -Mrmins *
  *********************************
  * Emoji Rating
- * Version: 0.0.1
+ * Version: 0.0.2
  * URL: https://github.com/mrmmins/EmojiRaiting
  * Description: Javascript plugin rate using emoticons.
  * Requires: >= 1.9
@@ -13,12 +13,12 @@
  */
 
 ;(function($) {
-  $('head').append('<meta charset="utf-8" />');
+  $('head').append('<meta charset='utf-8' />');
 
   var emojiConfiguration ={
     opacity: 0.3,
     val: 3,
-    width: "20px",
+    width: '20px',
     emojis: ['&#x1F620;','&#x1F61E;','&#x1F610;','&#x1F60A;','&#x1F603;'],
     event: 'click',
     disabled: false,
@@ -28,14 +28,14 @@
 
   $.fn.emoji = function(options, value) {
     if( options != undefined && !isJson(options) ){
-      if (options == "disabled" || options == "disable") {
+      if (options == 'disabled' || options == 'disable') {
         configuration.disabled = true;
-      }else if (options == "enabled" || options == "enable") {
+      }else if (options == 'enabled' || options == 'enable') {
         configuration.disabled = false;
-      } else if (options.toLowerCase()  == "setvalue"){
+      } else if (options.toLowerCase()  == 'setvalue'){
         configuration.val = value;
         recreateEmojiTable(this, configuration, configuration.emojis, value);
-      } else if (options.toLowerCase()  == "getvalue"){
+      } else if (options.toLowerCase()  == 'getvalue'){
         return configuration.val;
       }
       return;
@@ -50,8 +50,8 @@
       var lastEmoji = '';
       for(var i=0; i<configuration.count; i++){
         if( i < (configuration.emojis.length)){
-          lastEmoji = configuration.emojis[i];
-          tempEmojiArray.push(configuration.emojis[i]);
+          lastEmoji = findEmojiByName(configuration.emojis[i]);
+          tempEmojiArray.push(lastEmoji);
         }else{
           tempEmojiArray.push(lastEmoji);
         }
@@ -65,10 +65,10 @@
       recreateEmojiTable(element, configuration, configuration.emojis, value);
     });
 
-    $(element).delegate( ".emoji-table span", configuration.event, function(){
+    $(element).delegate( '.emoji-table span', configuration.event, function(){
       if(configuration.disabled)
         return;
-      var currentState = $(this).closest("table").html() ;
+      var currentState = $(this).closest('table').html() ;
       recreateEmojiTable(element, configuration, configuration.emojis, $(this).attr('value'));
     });
 
@@ -77,7 +77,7 @@
   }
 
   function isJson(item) {
-    item = typeof item !== "string"
+    item = typeof item !== 'string'
         ? JSON.stringify(item)
         : item;
 
@@ -87,7 +87,7 @@
         return false;
     }
 
-    if (typeof item === "object" && item !== null) {
+    if (typeof item === 'object' && item !== null) {
         return true;
     }
 
@@ -99,14 +99,59 @@
     $(element).empty();
     jQuery.each( emojis, function( i, val ) {
       if((value -1) < i){
-        tds+='<td><span value="' + (i+1) + '" style="opacity: ' +  conf.opacity + '; font-size: ' + conf.width + '">' + val + '</span></td>';
+        tds+='<td><span value='' + (i+1) + '' style='opacity: ' +  conf.opacity + '; font-size: ' + conf.width + ''>' + val + '</span></td>';
       } else{
-        tds+='<td><span value="' + (i+1) + '" style="font-size: ' +  conf.width + '">' + val + '</span></td>';
+        tds+='<td><span value='' + (i+1) + '' style='font-size: ' +  conf.width + ''>' + val + '</span></td>';
       }
-      $(element).html('<table class="emoji-table"><tbody><tr>' + tds + '</tr></tbody></table>');
+      $(element).html('<table class='emoji-table'><tbody><tr>' + tds + '</tr></tbody></table>');
     });
-    $(element).attr("value", value);
+    $(element).attr('value', value);
     configuration.val = value;
+  }
+
+  var emotionsArray = {
+    angry: '&#x1F620;',
+    disappointed: '&#x1F61E;',
+    meh: '&#x1F610;',
+    happy: '&#x1F60A;',
+    smile: '&#x1F603;',
+    wink: '&#x1F609;',
+    laughing: '&#x1F606;',
+    inlove: '&#x1F60D;',
+    heart: '&#x2764;',
+    crying: '&#x1F622;',
+    star: '&#x2B50;',
+    poop: '&#x1F4A9;',
+    cat: '&#x1F63A;',
+    like: '&#x1F44D;',
+    dislike: '&#x1F44E;',
+    cloud: '&#9729;',
+    blackstart: '&#9733;',
+    comet: '&#9732;',
+    umbrella: '&#9748;',
+    skull: '&#9760;',
+    radioactive: '&#9762;',
+    biohazard: '&#9763;',
+    aries: '&#9800;',
+    taurus: '&#9801;',
+    gemini: ' &#9802;',
+    cancer: '&#9803;',
+    leo: '&#9804;',
+    virgo: '&#9805;',
+    libra: '&#9806;',
+    scorpius: '&#9807;',
+    sagittarius: '&#9808;',
+    capricorn: '&#9809;',
+    aquarius: '&#9810;',
+    pisces: '&#9811;'
+  };
+
+  function findEmojiByName(emojiName) {
+    emojiName = emojiName.toLowerCase();
+    if( emotionsArray[emojiName] != null && emotionsArray[emojiName] != undefined ){
+      return emotionsArray[emojiName];
+    }
+    return emojiName;
   }
 
 }(jQuery));
