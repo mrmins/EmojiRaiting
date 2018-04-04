@@ -1,3 +1,6 @@
+<meta name='keywords' content='emoji, rating, rate, ratings, emojis, emoji rating, rate with emojis, emoji rates, emotion, emojicon, javascript, plugin, jquery, jquery rate, javascript rate, library'>
+
+
 # EmojiRaiting
 EmojiRating is an open source library to use rate using emoticons.
 
