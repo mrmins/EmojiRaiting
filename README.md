@@ -11,25 +11,33 @@ Your HTML file:
 
 Import the emoji.js file to your html.
 
+```
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="emoji.js"></script>
+```
+
 Add a div, to render you emoji control.
 
+```
 <div id="emoji-div"></div>
+```
 
 That's is all you need to render your emojis.
 
 Now, we would use jQuery to init the the emojirating plugin (also you might use javascript).
 
+```
 $("#emoji-div").emoji();
+```
 
 And, that's all!!!
 
 Now, you have a control like this: https://imgur.com/a/iFjFQ
 
-
+<img src="https://i.imgur.com/khAYcYh.png" />
 
 # Customization
+```
 var emojis = ['&#x1F620;']; //array of emojis.
 
 $("#emoji-div").emoji({
@@ -40,42 +48,43 @@ $("#emoji-div").emoji({
     emojis: emojis  //In case you want to define your own list of emojis
     count: 7, //VERY OPTIONAL - In case you want set 1 emoji in the array and display N number of them.
 });
-                        
+```
+
 # Events
-Enable emoji control: $("#emoji-div").emoji("enable");
+Enable emoji control: `$("#emoji-div").emoji("enable");`
 
-Disable emoji control: $("#emoji-div").emoji("disable");
+Disable emoji control: `$("#emoji-div").emoji("disable");`
 
-Get emoji control value: $("#emoji-div").emoji("getvalue");
+Get emoji control value: `$("#emoji-div").emoji("getvalue");`
 
-Set emoji control value: $("#emoji-div").emoji("setvalue", 5);
+Set emoji control value: `$("#emoji-div").emoji("setvalue", 5);`
 
 Emtoticons
-😞 &#x1F61E; Happy
+😞 `&#x1F61E;` Happy
 
-😐 "&#x1F610; Meh
+😐 `&#x1F610;` Meh
 
-😊 &#x1F60A; Happy
+😊 `&#x1F60A;` Happy
 
-😃 &#x1F603; Smile
+😃 `&#x1F603;` Smile
 
-😆 &#x1F606; Laughing
+😆 &#x1F606;` Laughing
 
-😍 &#x1F60D; Inlove
+😍 `&#x1F60D;` Inlove
 
-❤ &#x2764; Heart
+❤ `&#x2764;` Heart
 
-😢 &#x1F622; Crying
+😢 `&#x1F622;` Crying
 
-⭐ &#x2B50; Star
+⭐ `&#x2B50;` Star
 
-💩 &#x1F4A9; Poop
+💩 `&#x1F4A9;` Poop
 
-😺 &#x1F63A; Cat
+😺 `&#x1F63A;` Cat
 
-👍 &#x1F44D; Like
+👍 `&#x1F44D;` Like
 
-👎 &#x1F44E; Dislike
+👎 `&#x1F44E;` Dislike
 
 Not enough? Check a list, try this UTF-8 emoji list: https://www.w3schools.com/charsets/ref_utf_misc_symbols.asp
 
