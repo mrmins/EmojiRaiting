@@ -48,10 +48,10 @@ $("#emoji-div").emoji({emojis: emojis });
 ```
 <img src='https://i.imgur.com/tvomIYe.png' />
 
-Do you want to set 1 emoticon and repeat it?
+Do you want to set 1 emoticon and repeat it N times? That is possible with the `count` property
 ```
 var emojis = ['inlove'];
-$("#emoji-div").emoji({ emojis: emojis, val: 6, count: 8 });
+$("#emoji-div").emoji({ emojis: emojis, count: 8 });
 ```
 <img src='https://i.imgur.com/svelH28.png' />
 
