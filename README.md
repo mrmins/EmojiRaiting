@@ -117,6 +117,7 @@ $("#emoji-div").emoji({
     color: 'red', //Use color name (red, blue, black, etc.), HexColor (#abc123, #cecece, #b35c22) or RGB like rgb(255, 0, 0)
     emojis: emojis  //In case you want to define your own list of emojis
     count: 7, //VERY OPTIONAL - In case you want set 1 emoji in the array and display N number of them.
+    callback: myFunctionName //Returns event and currentValue in the change event
 });
 ```
 
@@ -129,6 +130,28 @@ Get emoji control value: `$("#emoji-div").emoji("getvalue");`
 
 Set emoji control value: `$("#emoji-div").emoji("setvalue", 5);`
 
+# Callbacks
+Now, you can use the callback to identify the `onChange` event. The callback returns: the method that you're using and as second one the value after the `onChange` event.
+```
+$(function() {
+    $("#emoji-div").emoji({callback: notifyMe });
+});
+
+function notifyMe(event, value){
+    alert("Event: " + event + " - Current value: " + value);
+}
+```
+
+Or, if you want to use the `mouseover` event:
+```
+$(function() {
+    $("#emoji-div").emoji({callback: notifyMe, event: mouseover });
+});
+
+function notifyMe(event, value){
+    alert("Event: " + event + " - Current value: " + value);
+}
+```
 
 # Pre-defined emtoticons
 If you want to use a predefined emoticionm is enoght to write into your custom emoji array, the name of the emoticion.
