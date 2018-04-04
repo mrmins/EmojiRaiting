@@ -117,7 +117,8 @@ $("#emoji-div").emoji({
     color: 'red', //Use color name (red, blue, black, etc.), HexColor (#abc123, #cecece, #b35c22) or RGB like rgb(255, 0, 0)
     emojis: emojis  //In case you want to define your own list of emojis
     count: 7, //VERY OPTIONAL - In case you want set 1 emoji in the array and display N number of them.
-    callback: myFunctionName //Returns event and currentValue in the change event
+    callback: myFunctionName, //Returns event and currentValue in the change event
+    debug: false //Boolean value
 });
 ```
 
@@ -229,7 +230,22 @@ pisces  `&#9811;` &#9811;
 
 Not enough? Check a list, try this UTF-8 emoji list: https://www.w3schools.com/charsets/ref_utf_misc_symbols.asp
 
-# Works for you? Invite me for a coffee
+# Debug
+If you want to debug, you have to set the `debug` key to `true`:
+
+```
+$(function() {
+    $("#emoji-div").emoji({ value: 7, debug: true, event: 'hover' });
+});
+```
+
+For example, for this wrong configuration, we have the default number of emojis (5), and the selected value is higher to the number of emoji elements, also, the event was configured as `hover` instead of `mouseover` or `click`.
+Then, in your browser console, you going to get:
+
+<img src='https://i.imgur.com/5FJp4o0.png' />
+
+
+# Works for you? Invite me for coffee
 
 <a href='https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=H5GC54Y7QGN5A'>
 <img src='https://www.dokuwiki.org/lib/exe/fetch.php?tok=d9fa04&media=https%3A%2F%2Fraw.githubusercontent.com%2Ftschinz%2Fdokuwiki_paypal_plugin%2Fmaster%2Flogo.jpg' />
