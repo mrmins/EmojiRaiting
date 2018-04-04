@@ -41,7 +41,7 @@ Now, you have a control like this
 
 # Customization
 
-Do you want to use your custom emojis? Than, call them by their names:
+Do you want to use your custom emojis? Call them by their names:
 ```
 var emojis = ['poop','unlike', 'like', 'star', 'inlove'];
 $("#emoji-div").emoji({emojis: emojis });
@@ -74,7 +74,8 @@ $("#emoji-div").emoji({emojis: emojis });
 Do you want your emojis bigger?
 
 ```
-$("#emoji-div").emoji({ width: '50px' });
+$("#emoji-div").emoji({ width: '50px' }); //As string
+$("#emoji-div").emoji({ width: 50p }); //As number
 ```
 
 Do you want to set an initial value?
@@ -128,7 +129,9 @@ Get emoji control value: `$("#emoji-div").emoji("getvalue");`
 Set emoji control value: `$("#emoji-div").emoji("setvalue", 5);`
 
 # Callbacks
-Now, you can use the callback to identify the `onChange` event. The callback returns: the method that you're using and as second one the value after the `onChange` event.
+Now, you can use the callback to identify the `onChange` event. The callback returns: 
+1. The event that you're using.
+2. The value after the `onChange` event.
 ```
 $(function() {
     $("#emoji-div").emoji({callback: notifyMe });
@@ -142,13 +145,14 @@ function notifyMe(event, value){
 Or, if you want to use the `mouseover` event:
 ```
 $(function() {
-    $("#emoji-div").emoji({callback: notifyMe, event: mouseover });
+    $("#emoji-div").emoji({callback: notifyMe, event: 'mouseover' });
 });
 
 function notifyMe(event, value){
     alert("Event: " + event + " - Current value: " + value);
 }
 ```
+<img src='https://i.imgur.com/z6rodyu.png' />
 
 # Pre-defined emtoticons
 If you want to use a predefined emoticion is enough to add into your custom emoji array, the name of the emoticion.
