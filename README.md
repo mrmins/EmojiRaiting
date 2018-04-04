@@ -71,6 +71,13 @@ var emojis = ['skull','happy','cloud','&#x1F60A;','&#x1F603;', '&#9760;'];
 $("#emoji-div").emoji({emojis: emojis });
 ```
 
+Do you want your emojis bigger?
+
+```
+var emojis = ['skull','happy','cloud','&#x1F60A;','&#x1F603;', '&#9760;'];
+$("#emoji-div").emoji({emojis: emojis, width: '50px' });
+```
+
 Full configuration.
 ```
 $("#emoji-div").emoji({
