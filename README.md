@@ -37,9 +37,40 @@ Now, you have a control like this: https://imgur.com/a/iFjFQ
 <img src="https://i.imgur.com/khAYcYh.png" />
 
 # Customization
-```
-var emojis = ['&#x1F620;']; //array of emojis.
 
+Do you want to use your custom emojis? Call them by their names:
+```
+var emojis = ['poop','unlike', 'like', 'star', 'inlove'];
+$("#emoji-div").emoji({emojis: emojis });
+
+```
+<img src='https://i.imgur.com/tvomIYe.png' />
+
+Do you want to set 1 emoticon and repeat it?
+```
+var emojis = ['angry']; //array of emojis.
+
+$("#emoji-div").emoji({
+    opacity: 0.5, //Opacity for no selected value.
+    val: 4,  //Selected value
+    width: '35px',  //With of each emoji.
+    event: 'click',  //Event "click" or "mouseover".
+    emojis: emojis  //In case you want to define your own list of emojis
+    count: 7, //VERY OPTIONAL - In case you want set 1 emoji in the array and display N number of them.
+});
+```
+
+Do you want to call them using unicode characters?
+```
+var emojis = ['&#x1F620;','&#x1F61E;','&#x1F610;','&#x1F60A;','&#x1F603;', '&#9760;'];
+$("#emoji-div").emoji({emojis: emojis });
+```
+
+<img src="https://i.imgur.com/nWgSd21.png" />
+
+
+Full configuration.
+```
 $("#emoji-div").emoji({
     opacity: 0.5, //Opacity for no selected value.
     val: 4,  //Selected value
