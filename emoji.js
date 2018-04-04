@@ -22,7 +22,8 @@
     emojis: ['&#x1F620;','&#x1F61E;','&#x1F610;','&#x1F60A;','&#x1F603;'],
     event: 'click',
     disabled: false,
-    count: 0
+    count: 0,
+    color: ''
   };
   var configuration;
 
@@ -101,9 +102,9 @@
     $(element).empty();
     jQuery.each( emojis, function( i, val ) {
       if((value -1) < i){
-        tds+='<td><span value="' + (i+1) + '" style="opacity: ' +  conf.opacity + '; font-size: ' + conf.width + '">' + val + '</span></td>';
+        tds+='<td><span value="' + (i+1) + '" style="opacity: ' +  conf.opacity + '; font-size: ' + conf.width + '; color: ' + conf.color + '">' + val + '</span></td>';
       } else{
-        tds+='<td><span value="' + (i+1) + '" style="font-size: ' +  conf.width + '">' + val + '</span></td>';
+        tds+='<td><span value="' + (i+1) + '" style="font-size: ' +  conf.width + '; color: ' +  conf.color + '">' + val + '</span></td>';
       }
       $(element).html('<table class="emoji-table"><tbody><tr>' + tds + '</tr></tbody></table>');
     });
