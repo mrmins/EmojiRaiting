@@ -45,8 +45,8 @@ $("#emoji-div").emoji({
     val: 4,  //Selected value
     width: '35px',  //With of each emoji.
     event: 'click',  //Event "click" or "mouseover".
-    count: 7, //In case you want set 1 emoji in the array and display N number of them.
     emojis: emojis  //In case you want to define your own list of emojis
+    count: 7, //VERY OPTIONAL - In case you want set 1 emoji in the array and display N number of them.
 });
                         
 ```
