@@ -4,7 +4,7 @@
  * Emotions Rating -Mrmins *
  *********************************
  * Emoji Rating
- * Version: 0.0.2
+ * Version: 0.0.3
  * URL: https://github.com/mrmmins/EmojiRaiting
  * Description: Javascript plugin rate using emoticons.
  * Requires: >= 1.9
@@ -72,7 +72,13 @@
       if(configuration.disabled)
         return;
       var currentState = $(this).closest('table').html() ;
-      recreateEmojiTable(element, configuration, configuration.emojis, $(this).attr('value'));
+      recreateEmojiTable(element, configuration, configuration.emojis, $(this).attr('value'), function(currentValue){
+        configuration.value = currentValue;
+        if(configuration.callback != undefined){
+          configuration.callback(configuration.event, configuration.value);
+        }
+      });
+
     });
 
     var style = $('<style>.emoji-table span:hover { cursor: pointer; }</style>');
@@ -97,7 +103,7 @@
     return false;
   }
 
-  function recreateEmojiTable(element, conf, emojis, value) {
+  function recreateEmojiTable(element, conf, emojis, value, callback) {
     var tds = '';
     $(element).empty();
     jQuery.each( emojis, function( i, val ) {
@@ -110,6 +116,9 @@
     });
     $(element).attr('value', value);
     configuration.val = value;
+    if(callback!= undefined){
+      callback(value);
+    }
   }
 
   var emotionsArray = {
