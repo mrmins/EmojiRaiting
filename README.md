@@ -12,7 +12,7 @@ Import the `jquery` and `emoji.js` file to your html.
 <script src="emoji.js"></script>
 ```
 
-Add a div, to render you emoji control.
+Add a `div`, to render your emoji control.
 
 ```
 <div id="emoji-div"></div>
@@ -20,10 +20,17 @@ Add a div, to render you emoji control.
 
 That's is all you need to render your emojis.
 
-Now, we would use jQuery to init the the emojirating plugin (also you might use javascript).
+Now, we have to use jQuery to init the the emojirating plugin.
 
 ```
 $("#emoji-div").emoji();
+```
+You can invoke it from a method, or from your `onLoad`
+
+```
+$(function() {
+    $("#emoji-div").emoji();
+});
 ```
 
 And, that's all!!!
@@ -34,11 +41,10 @@ Now, you have a control like this
 
 # Customization
 
-Do you want to use your custom emojis? Call them by their names:
+Do you want to use your custom emojis? Than, call them by their names:
 ```
 var emojis = ['poop','unlike', 'like', 'star', 'inlove'];
 $("#emoji-div").emoji({emojis: emojis });
-
 ```
 <img src='https://i.imgur.com/tvomIYe.png' />
 
@@ -54,7 +60,7 @@ $("#emoji-div").emoji({
 ```
 <img src='https://i.imgur.com/svelH28.png' />
 
-Do you want to call them using unicode characters?
+Do you want use unicode characters?
 ```
 var emojis = ['&#x1F620;','&#x1F61E;','&#x1F610;','&#x1F60A;','&#x1F603;', '&#9760;'];
 $("#emoji-div").emoji({emojis: emojis });
@@ -62,7 +68,7 @@ $("#emoji-div").emoji({emojis: emojis });
 
 <img src="https://i.imgur.com/nWgSd21.png" />
 
-Do you want to combine emoticions names and unicode characters?
+Do you want to combine emoticions names and unicode characters? Feel free to do it!
 
 ```
 var emojis = ['skull','happy','cloud','&#x1F60A;','&#x1F603;', '&#9760;'];
@@ -72,8 +78,7 @@ $("#emoji-div").emoji({emojis: emojis });
 Do you want your emojis bigger?
 
 ```
-var emojis = ['skull','happy','cloud','&#x1F60A;','&#x1F603;', '&#9760;'];
-$("#emoji-div").emoji({emojis: emojis, width: '50px' });
+$("#emoji-div").emoji({ width: '50px' });
 ```
 
 Do you want to set an initial value?
@@ -81,7 +86,7 @@ Do you want to set an initial value?
 $("#emoji-div").emoji({ val: 4 });
 ```
 
-Do you want to add color to your emojis?
+Do you want to set color to your emojis?
 1. Using the color name.
 ```
 var emojis = ['heart'];
@@ -100,10 +105,9 @@ var emojis = ['heart'];
 $("#emoji-div").emoji({ emojis: emojis, color: 'rgb(255, 0, 0)' });
 ```
 
-The result:
 <img src='https://i.imgur.com/TRZ4kNU.png' />
 
-Full configuration.
+# Full plugin configuration example
 ```
 $("#emoji-div").emoji({
     opacity: 0.5, //Opacity for no-selected emojis. [The value should be between 0 and 1 (like 0.5)]
