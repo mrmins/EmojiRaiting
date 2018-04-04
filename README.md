@@ -48,13 +48,15 @@ $("#emoji-div").emoji({emojis: emojis });
 
 Do you want to set 1 emoticon and repeat it?
 ```
-var emojis = ['angry']; //array of emojis.
+var emojis = ['inlove']; //array of emojis.
 
 $("#emoji-div").emoji({
     emojis: emojis  //In case you want to define your own list of emojis
-    count: 7, //VERY OPTIONAL - In case you want set 1 emoji in the array and display N number of them.
+    val: 6,
+    count: 8, //VERY OPTIONAL - In case you want set 1 emoji in the array and display N number of them.
 });
 ```
+<img src='https://i.imgur.com/svelH28.png' />
 
 Do you want to call them using unicode characters?
 ```
@@ -64,7 +66,7 @@ $("#emoji-div").emoji({emojis: emojis });
 
 <img src="https://i.imgur.com/nWgSd21.png" />
 
-Do you want to combine emoticions?
+Do you want to combine emoticions names and unicode characters?
 
 ```
 var emojis = ['skull','happy','cloud','&#x1F60A;','&#x1F603;', '&#9760;'];
