@@ -5,11 +5,7 @@
 EmojiRating is an open source library to use rate using emoticons.
 
 # How to use it?
-First one, you require Jquery.
-
-Your HTML file:
-
-Import the emoji.js file to your html.
+Import the `jquery` and `emoji.js` file to your html.
 
 ```
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
