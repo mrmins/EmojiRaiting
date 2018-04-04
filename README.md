@@ -74,7 +74,7 @@ $("#emoji-div").emoji({emojis: emojis });
 Full configuration.
 ```
 $("#emoji-div").emoji({
-    opacity: 0.5, //Opacity for no selected value. [The value should be between 0 and 1 (like 0.5)]
+    opacity: 0.5, //Opacity for no-selected emojis. [The value should be between 0 and 1 (like 0.5)]
     val: 4,  //Selected value
     width: '35px',  //With of each emoji.
     event: 'click',  //Event "click" or "mouseover".
