@@ -54,7 +54,7 @@
           lastEmoji = findEmojiByName(configuration.emojis[i]);
           tempEmojiArray.push(lastEmoji);
         }else{
-          lastEmoji = findEmojiByName(configuration.emojis[i]);
+          lastEmoji = findEmojiByName(lastEmoji);
           tempEmojiArray.push(lastEmoji);
         }
       }
