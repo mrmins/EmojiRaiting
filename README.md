@@ -254,7 +254,7 @@ Then, in your browser console, you going to get:
 </a>
 
 # Do you want some improves?
-Feel free to write ussues or new actions you want to get in this pluging.
+Feel free to write issues or new actions you want to get in this pluging.
 
 
 # Considerations.
