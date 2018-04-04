@@ -151,7 +151,13 @@ function notifyMe(event, value){
 ```
 
 # Pre-defined emtoticons
-If you want to use a predefined emoticionm is enoght to write into your custom emoji array, the name of the emoticion.
+If you want to use a predefined emoticion is enough to add into your custom emoji array, the name of the emoticion.
+
+For example: 
+```
+var emojis = ['angry','men','happy'];
+```
+Check the complete list:
 
 angry  `&#x1F620;` &#x1F620;
 
