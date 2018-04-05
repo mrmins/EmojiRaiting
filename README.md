@@ -74,8 +74,8 @@ $("#emoji-div").emoji({emojis: emojis });
 **Do you want your emojis bigger?**
 
 ```
-$("#emoji-div").emoji({ width: '50px' }); //As string in pixels
-$("#emoji-div").emoji({ width: '50em' }); //As string in em
+$("#emoji-div").emoji({ width: '50px' }); //Using pixels
+$("#emoji-div").emoji({ width: '50em' }); //Using em
 $("#emoji-div").emoji({ width: 50 }); //As number
 ```
 
@@ -167,7 +167,8 @@ For example:
 ```
 var emojis = ['angry','men','happy'];
 ```
-Check the complete list:
+
+Check the complete list included in the pluging.
 
 angry  `&#x1F620;` &#x1F620;
 
