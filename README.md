@@ -41,21 +41,21 @@ Now, you have a control like this
 
 # Customization
 
-Do you want to use your custom emojis? Call them by their names:
+**Do you want to use your custom emojis?** Call them by their names:
 ```
 var emojis = ['poop','unlike', 'like', 'star', 'inlove'];
 $("#emoji-div").emoji({emojis: emojis });
 ```
 <img src='https://i.imgur.com/tvomIYe.png' />
 
-Do you want to set 1 emoticon and repeat it N times? That is possible with the `count` property
+**Do you want to set 1 emoticon and repeat it N times? That is possible with the `count` property**
 ```
 var emojis = ['inlove'];
 $("#emoji-div").emoji({ emojis: emojis, count: 8 });
 ```
 <img src='https://i.imgur.com/svelH28.png' />
 
-Do you want use unicode characters?
+**Do you want use unicode characters?**
 ```
 var emojis = ['&#x1F620;','&#x1F61E;','&#x1F610;','&#x1F60A;','&#x1F603;', '&#9760;'];
 $("#emoji-div").emoji({emojis: emojis });
@@ -63,7 +63,7 @@ $("#emoji-div").emoji({emojis: emojis });
 
 <img src="https://i.imgur.com/nWgSd21.png" />
 
-Do you want to combine emoticions names and unicode characters? Feel free to do it!
+**Do you want to combine emoticions names and unicode characters?** Feel free to do it!
 
 ```
 var emojis = ['skull','happy','cloud','&#x1F60A;','&#x1F603;', '&#9760;'];
@@ -71,19 +71,19 @@ $("#emoji-div").emoji({emojis: emojis });
 ```
 <img src ='https://i.imgur.com/CqcCv4d.png' />
 
-Do you want your emojis bigger?
+**Do you want your emojis bigger?**
 
 ```
 $("#emoji-div").emoji({ width: '50px' }); //As string
-$("#emoji-div").emoji({ width: 50p }); //As number
+$("#emoji-div").emoji({ width: 50 }); //As number
 ```
 
-Do you want to set an initial value?
+**Do you want to set an initial value?**
 ```
 $("#emoji-div").emoji({ val: 4 });
 ```
 
-Do you want to set color to your emojis?
+**Do you want to set color to your emojis?**
 1. Using the color name.
 ```
 var emojis = ['heart'];
@@ -103,6 +103,10 @@ $("#emoji-div").emoji({ emojis: emojis, count: 8, color: 'rgb(255, 0, 0)' });
 ```
 
 <img src='https://i.imgur.com/TRZ4kNU.png' />
+
+**Do you want to disabled your emoji interaction?**
+
+$("#emoji-div").emoji({ disabled: true });
 
 # Full plugin configuration example
 ```
