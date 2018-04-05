@@ -48,14 +48,14 @@ $("#emoji-div").emoji({emojis: emojis });
 ```
 <img src='https://i.imgur.com/tvomIYe.png' />
 
-**Do you want to set 1 emoticon and repeat it N times? That is possible with the `count` property**
+**Do you want to set 1 emoticon and repeat it N times?** That is possible with the `count` property
 ```
 var emojis = ['inlove'];
 $("#emoji-div").emoji({ emojis: emojis, count: 8 });
 ```
 <img src='https://i.imgur.com/svelH28.png' />
 
-**Do you want use unicode characters?**
+**Do you want use unicode characters?** Yes, it is possible
 ```
 var emojis = ['&#x1F620;','&#x1F61E;','&#x1F610;','&#x1F60A;','&#x1F603;', '&#9760;'];
 $("#emoji-div").emoji({emojis: emojis });
@@ -74,7 +74,8 @@ $("#emoji-div").emoji({emojis: emojis });
 **Do you want your emojis bigger?**
 
 ```
-$("#emoji-div").emoji({ width: '50px' }); //As string
+$("#emoji-div").emoji({ width: '50px' }); //As string in pixels
+$("#emoji-div").emoji({ width: '50em' }); //As string in em
 $("#emoji-div").emoji({ width: 50 }); //As number
 ```
 
@@ -105,8 +106,9 @@ $("#emoji-div").emoji({ emojis: emojis, count: 8, color: 'rgb(255, 0, 0)' });
 <img src='https://i.imgur.com/TRZ4kNU.png' />
 
 **Do you want to disabled your emoji interaction?**
-
+```
 $("#emoji-div").emoji({ disabled: true });
+```
 
 # Full plugin configuration example
 ```
