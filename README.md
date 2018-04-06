@@ -18,7 +18,7 @@ Add a `div`, to render your emoji control.
 <div id="emoji-div"></div>
 ```
 
-That's is all you need to render your emojis.
+That's all you need to render your emojis.
 
 Now, we have to use jQuery to init the the emojirating plugin.
 
@@ -41,7 +41,7 @@ Now, you have a control like this
 
 # Customization
 
-**Do you want to use your custom emojis?** Call them by their names:
+**Do you want to use custom emojis?** Call them by their names:
 ```
 var emojis = ['poop','unlike', 'like', 'star', 'inlove'];
 $("#emoji-div").emoji({emojis: emojis });
@@ -55,7 +55,7 @@ $("#emoji-div").emoji({ emojis: emojis, count: 8 });
 ```
 <img src='https://i.imgur.com/svelH28.png' />
 
-**Do you want use unicode characters?** Yes, it is possible
+**Do you want use unicode characters?** Do it!, it's possible
 ```
 var emojis = ['&#x1F620;','&#x1F61E;','&#x1F610;','&#x1F60A;','&#x1F603;', '&#9760;'];
 $("#emoji-div").emoji({emojis: emojis });
