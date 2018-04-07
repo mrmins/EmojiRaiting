@@ -3,9 +3,10 @@
 
 # EmojiRaiting
 EmojiRating is an open source library to use rate using emoticons.
+Use UTF-8 and Unicode characters to create amazing custom combinations.
 
 # How to use it?
-Import the `jquery` and `emoji.js` file to your html.
+Import the `jquery` and `emoji.js` files to your html.
 
 ```
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -20,7 +21,7 @@ Add a `div`, to render your emoji control.
 
 That's all you need to render your emojis.
 
-Now, we have to use jQuery to init the the emojirating plugin.
+Now, we have to use jQuery to initialize the the `EmojiRating` plugin.
 
 ```
 $("#emoji-div").emoji();
