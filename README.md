@@ -106,6 +106,18 @@ $("#emoji-div").emoji({ emojis: emojis, count: 8, color: 'rgb(255, 0, 0)' });
 
 <img src='https://i.imgur.com/TRZ4kNU.png' />
 
+**Do you want to use your own resources?** It's possible from external and internal resources.
+```
+var emojis = ['img/star.png', 'img/tree.svg', 'img/santa.svg', 'img/reindeer.png'];
+$("#emoji-div").emoji({ emojis: emojis, width: 50 });
+```
+
+If the images are very small, you can make them bigger with: 
+```
+var emojis = ['img/star.png', 'img/tree.svg', 'img/santa.svg', 'img/reindeer.png'];
+$("#emoji-div").emoji({ emojis: emojis, width: 50 });
+```
+
 **Do you want to disabled your emoji interaction?**
 ```
 $("#emoji-div").emoji({ disabled: true });
@@ -121,6 +133,7 @@ $("#emoji-div").emoji({
     color: 'red', //Use color name (red, blue, black, etc.), HexColor (#abc123, #cecece, #b35c22) or RGB like rgb(255, 0, 0)
     emojis: emojis  //In case you want to define your own list of emojis
     count: 7, //VERY OPTIONAL - In case you want set 1 emoji in the array and display N number of them.
+    UTF8: true, //By default, the EmojiRaiting plugin insert the meta tag to your code.
     callback: myFunctionName, //Returns event and currentValue in the change event
     debug: false //Boolean value
 });
