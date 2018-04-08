@@ -109,7 +109,7 @@ $("#emoji-div").emoji({ emojis: emojis, count: 8, color: 'rgb(255, 0, 0)' });
 **Do you want to use your own resources?** It's possible from external and internal resources (`.png`, `.jpg` and `.svg`)
 ```
 var emojis = ['img/star.png', 'img/tree.svg', 'img/santa.svg', 'img/reindeer.png'];
-$("#emoji-div").emoji({ emojis: emojis, width: 50 });
+$("#emoji-div").emoji({ emojis: emojis });
 ```
 If the images are very small, you can make them bigger with: 
 ```
