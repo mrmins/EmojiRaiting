@@ -117,7 +117,7 @@ If the images are very small, you can make them bigger with:
 var emojis = ['img/star.png', 'img/tree.svg', 'img/santa.svg', 'img/reindeer.png'];
 $("#emoji-div").emoji({ emojis: emojis, width: 50 });
 ```
-<img src='http://i.imgur.com/JShamnC.png' />
+<img src='https://i.imgur.com/ZLC1J9X.png' />
 
 **Do you want to disabled your emoji interaction?**
 ```
