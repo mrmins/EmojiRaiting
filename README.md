@@ -134,7 +134,7 @@ $("#emoji-div").emoji({ disabled: true });
 ```
 $("#emoji-div").emoji({ UTF8: false });
 ```
-By default, ``EmojiRaiting` plugin add the meta tag: `<meta charset="utf-8" />` to your `DOM`, if you want omit it, set the `UTF8` key to `false`.
+By default, `EmojiRaiting` plugin add the meta tag: `<meta charset="utf-8" />` to your `DOM`, if you want omit it, set the `UTF8` key to `false`.
 
 # Full plugin configuration example
 ```
