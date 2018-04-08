@@ -106,7 +106,7 @@ $("#emoji-div").emoji({ emojis: emojis, count: 8, color: 'rgb(255, 0, 0)' });
 
 <img src='https://i.imgur.com/TRZ4kNU.png' />
 
-**Do you want to use your own resources?** It's possible from external and internal resources.
+**Do you want to use your own resources?** It's possible from external and internal resources (`.png`, `.jpg` and `.svg`)
 ```
 var emojis = ['img/star.png', 'img/tree.svg', 'img/santa.svg', 'img/reindeer.png'];
 $("#emoji-div").emoji({ emojis: emojis, width: 50 });
