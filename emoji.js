@@ -4,7 +4,7 @@
  * Emotions Rating -Mrmins *
  *********************************
  * Emoji Rating
- * Version: 0.0.4
+ * Version: 0.0.5
  * URL: https://github.com/mrmmins/EmojiRaiting
  * Description: Javascript plugin rate using emoticons.
  * Requires: >= 1.9
@@ -17,7 +17,6 @@
     console.error('Jquery wanst loaded in your project.');
     return;
   }
-  $('head').append('<meta charset="utf-8" />');
 
   var emojiConfiguration ={
     opacity: 0.3,
@@ -27,6 +26,7 @@
     event: 'click',
     disabled: false,
     count: 0,
+    UTF8: true,
     color: '',
     debug: false
   };
@@ -41,7 +41,7 @@
         configuration.disabled = false;
       } else if (options.toLowerCase()  == 'setvalue'){
         configuration.value = value;
-        recreateEmojiTable(this, configuration, configuration.emojis, value);
+        recreateEmojiTable(this, configuration, configuration.emojis, configuration.width, value);
       } else if (options.toLowerCase()  == 'getvalue'){
         return configuration.value;
       }
@@ -78,17 +78,21 @@
       configuration.emojis = tempEmojiArray;
     }
 
+    if(configuration.UTF8){
+      $('head').append('<meta charset="utf-8" />');
+    }
+
     var element = this;
     var value = configuration.value;
     this.each( function() {
-      recreateEmojiTable(element, configuration, configuration.emojis, value);
+      recreateEmojiTable(element, configuration, configuration.emojis, configuration.width, value);
     });
 
     $(element).delegate( '.emoji-table span', configuration.event, function(){
       if(configuration.disabled)
         return;
       var currentState = $(this).closest('table').html() ;
-      recreateEmojiTable(element, configuration, configuration.emojis, $(this).attr('value'), function(currentValue){
+      recreateEmojiTable(element, configuration, configuration.emojis, configuration.width, $(this).attr('value'), function(currentValue){
         configuration.value = currentValue;
         if(configuration.callback != undefined){
           configuration.callback(configuration.event, configuration.value);
@@ -119,10 +123,12 @@
     return false;
   }
 
-  function recreateEmojiTable(element, conf, emojis, value, callback) {
+  function recreateEmojiTable(element, conf, emojis, width, value, callback) {
     var tds = '';
     $(element).empty();
     jQuery.each( emojis, function( i, val ) {
+      val = checkIfIsResource(val, width);
+      console.log(val);
       if((value -1) < i){
         tds+='<td><span value="' + (i+1) + '" style="opacity: ' +  conf.opacity + '; font-size: ' + conf.width + '; color: ' + conf.color + '">' + val + '</span></td>';
       } else{
@@ -135,6 +141,10 @@
     if(callback!= undefined){
       callback(value);
     }
+  }
+
+  function checkIfIsResource(path, width) {
+    return ( path.indexOf('.') > -1 ) ? '<img src="' + path + '" width="' + width + '" />' : path;
   }
 
   var emotionsArray = {
