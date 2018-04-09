@@ -293,7 +293,11 @@ Then, in your browser console, you going to get:
 
 # Do you want some improves?
 Feel free to write issues or new actions you want to get in this pluging.
-
+**Features for version 0.7**
+1. Shaking on `hover` event.
+2. Maximization/Minimization on `hover` event.
+**Features for version 0.9**
+1. Display all the emoticons while you haven't selected anyone. Contraction once select one (like a horizontal accordion).
 
 # Considerations.
 This plugin is under construction, now, it accepts "id", but in a close future, we going to accept multiple initializations with classes.
