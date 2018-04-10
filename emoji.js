@@ -4,7 +4,7 @@
  * Emotions Rating -Mrmins *
  *********************************
  * Emoji Rating
- * Version: 0.0.5
+ * Version: 0.0.6
  * URL: https://github.com/mrmmins/EmojiRaiting
  * Description: Javascript plugin rate using emoticons.
  * Requires: >= 1.9
