@@ -53,15 +53,16 @@
     configuration = $.extend(emojiConfiguration, options);
     configuration.event = configuration.event.toLowerCase();
 
-    if(configuration.emojis.length == 0){
+    if(configuration.emojis.length == 0 && configuration.debug){
       console.error('You have defined a empty emoji array.');
     }
     if(configuration.value > configuration.count && configuration.value > configuration.emojis.length && configuration.debug){
       console.error('The default value is higher to the number of elements in the array (or count property in case you have it defined).');
     }
-    if(configuration.event != 'click' || configuration.event != 'mouseover' || configuration.event != ''){
+    if(configuration.event != 'click' && configuration.event != 'mouseover' && configuration.event != ''){
       configuration.event = 'click';
-      console.warn('Wrong event name. Automatically overrode to "click" event.');
+      if(configuration.debug)
+        console.warn('Wrong event name. Automatically overrode to "click" event.');
     }
 
     if(configuration.emojis.length == 0){
@@ -82,6 +83,14 @@
       }
       configuration.emojis = tempEmojiArray;
     }
+
+    configuration.animation = (configuration.animation == undefined || configuration == null) ? '' : configuration.animation.toLowerCase();
+    if(animations.indexOf(configuration.animation) < 0){
+      configuration.animation = '';
+      if(configuration.debug)
+        console.warn('Unrecognized animation name. Animation excluded from the configuration. Try with: ' + animations.join(', '));
+    }
+
 
     var element = this;
     var value = configuration.value;
@@ -125,7 +134,6 @@
   }
 
   function recreateEmojiTable(element, conf, emojis, value, callback) {
-    console.log(conf);
     var tds = '';
     $(element).empty();
     jQuery.each( emojis, function( i, val ) {
@@ -142,6 +150,8 @@
       callback(value);
     }
   }
+
+  var animations = ['shake', 'shake-slow', 'shake-hard', 'shake-horizontal', 'shake-vertical', 'shake-rotate', 'shake-opacity', 'shake-crazy', 'shake-chunk'];
 
   var emotionsArray = {
     angry: '&#x1F620;',
