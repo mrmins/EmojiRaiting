@@ -11,6 +11,7 @@ Import the `jquery` and `emoji.js` files to your html.
 ```
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="emoji.js"></script>
+<link rel="stylesheet" type="text/css" href="csshake.min.css">
 ```
 
 Add a `div`, to render your emoji control.
