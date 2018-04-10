@@ -115,6 +115,7 @@ If the images are very small, you can make them bigger with:
 ```
 var emojis = ['img/star.png', 'img/tree.svg', 'img/santa.svg', 'img/reindeer.png'];
 $("#emoji-div").emoji({ emojis: emojis, width: 50 });
+
 ```
 <img src='https://i.imgur.com/ZLC1J9X.png' />
 
@@ -136,6 +137,20 @@ $("#emoji-div").emoji({ UTF8: false });
 ```
 By default, `EmojiRaiting` plugin add the meta tag: `<meta charset="utf-8" />` to your `DOM`, if you want omit it, set the `UTF8` key to `false`.
 
+# Animations
+For animations, `EmojiRaiting` plugins uses: <a href='https://github.com/elrumordelaluz/csshake'>@elrumordelaluz - CSShake</a>.
+
+Add animations is very easy with:
+
+```
+$("#emoji-div").emoji({ width: 50, animation: 'shake-crazy' });
+```
+
+<img src='https://i.imgur.com/N6zfclC.png' />
+
+Some other options are: `shake`, `shake-slow`, `shake-hard`, `shake-horizontal`, `shake-vertical`, `shake-rotate`, `shake-opacity`, `shake-crazy`, `shake-chunk`
+
+
 # Full plugin configuration example
 ```
 $("#emoji-div").emoji({
@@ -146,6 +161,7 @@ $("#emoji-div").emoji({
     color: 'red', //Use color name (red, blue, black, etc.), HexColor (#abc123, #cecece, #b35c22) or RGB like rgb(255, 0, 0)
     emojis: emojis  //In case you want to define your own list of emojis
     count: 7, //VERY OPTIONAL - In case you want set 1 emoji in the array and display N number of them.
+    animation: '', //shake, shake-slow, shake-hard, shake-horizontal, shake-vertical, shake-rotate, shake-opacity, shake-crazy, shake-chunk
     UTF8: true, //By default, the EmojiRaiting plugin insert the meta tag to your code.
     callback: myFunctionName, //Returns event and currentValue in the change event
     debug: false //Boolean value
