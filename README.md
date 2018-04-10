@@ -317,4 +317,6 @@ Feel free to write issues or new actions you want to get in this pluging.
 # Considerations.
 This plugin is under construction, now, it accepts "id", but in a close future, we going to accept multiple initializations with classes.
 
+For animations, `EmojiRaiting` plugins uses: <a href='https://github.com/elrumordelaluz/csshake'>@elrumordelaluz - CSShake</a>.
+
 Feel free to use this javascript library whatever you want, but, please, keep your codes open to the world.
