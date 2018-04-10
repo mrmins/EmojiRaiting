@@ -312,7 +312,13 @@ Then, in your browser console, you going to get:
 Feel free to write issues or new actions you want to get in this pluging.
 
 **Features for version 0.7**
+1. Animation for maximization of the selected item.
+
+**Features for version 0.8**
 1. Display all the emoticons while you haven't selected anyone. Contraction once you select one (like a horizontal accordion).
+
+**Features for version 0.9**
+1. Emoji with custom message in a popup box in a generic position.
 
 # Considerations.
 This plugin is under construction, now, it accepts "id", but in a close future, we going to accept multiple initializations with classes.
