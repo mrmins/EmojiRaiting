@@ -320,6 +320,10 @@ Feel free to write issues or new actions you want to get in this pluging.
 **Features for version 0.9**
 1. Emoji with custom message in a popup box in a generic position.
 
+**Features for version 1.0**
+1. Double state. From the dark side to the light side. Depending of the rate, emoticons should be displayed. If you have a bad rate, all the emoticons are sad, right?, but if you get a good reputation, some of them should are jealous, right?
+
+
 # Considerations.
 This plugin is under construction, now, it accepts "id", but in a close future, we going to accept multiple initializations with classes.
 
