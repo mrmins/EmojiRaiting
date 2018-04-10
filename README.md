@@ -292,14 +292,14 @@ If you want to debug, you have to set the `debug` key to `true`:
 
 ```
 $(function() {
-    $("#emoji-div").emoji({ value: 7, debug: true, event: 'hover' });
+    $("#emoji-div").emoji({ value: 7, debug: true, event: 'hover', animation: 'chake' });
 });
 ```
 
 For example, for this wrong configuration, we have the default number of emojis (5), and the selected value is higher to the number of emoji elements, also, the event was configured as `hover` instead of `mouseover` or `click`.
 Then, in your browser console, you going to get:
 
-<img src='https://i.imgur.com/5FJp4o0.png' />
+<img src='https://i.imgur.com/34OSaKL.png' />
 
 
 # Works for you? Invite me for coffee
