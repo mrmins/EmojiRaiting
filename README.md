@@ -147,7 +147,7 @@ Add animations is very easy with:
 $("#emoji-div").emoji({ width: 50, animation: 'shake-crazy' });
 ```
 
-<img src='https://media.giphy.com/media/fteuVlf6BCIsOgVU36/giphy.gif' />
+<img src='https://media.giphy.com/media/9JjXAG85hyQWzTs40B/giphy.gif' />
 
 Some other options are: `shake`, `shake-slow`, `shake-hard`, `shake-horizontal`, `shake-vertical`, `shake-rotate`, `shake-opacity`, `shake-crazy`, `shake-chunk`
 
