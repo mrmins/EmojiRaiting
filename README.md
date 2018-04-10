@@ -156,7 +156,7 @@ Some other options are: `shake`, `shake-slow`, `shake-hard`, `shake-horizontal`,
 ```
 $("#emoji-div").emoji({
     opacity: 0.5, //Opacity for no-selected emojis. [The value should be between 0 and 1 (like 0.5)]
-    val: 4,  //Selected value
+    value: 4,  //Selected value
     width: '35px',  //With of each emoji.
     event: 'click',  //Event "click" or "mouseover".
     color: 'red', //Use color name (red, blue, black, etc.), HexColor (#abc123, #cecece, #b35c22) or RGB like rgb(255, 0, 0)
@@ -296,7 +296,11 @@ $(function() {
 });
 ```
 
-For example, for this wrong configuration, we have the default number of emojis (5), and the selected value is higher to the number of emoji elements, also, the event was configured as `hover` instead of `mouseover` or `click`.
+For example, the plugin has some wrong configurations.
+1. The `value` was set the default to 7 and the number of emojis is 5. The selected value is higher to the number of emoji elements, this produce `handled error` in your code.
+2. The `event` was configured as `hover` instead of `mouseover` or `click`. That produces a warning.
+3. The `animation` is wrong, `chake` instead of `shake`. That produces a warning.
+
 Then, in your browser console, you going to get:
 
 <img src='https://i.imgur.com/34OSaKL.png' />
