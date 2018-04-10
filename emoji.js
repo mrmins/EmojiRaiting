@@ -17,6 +17,7 @@
     console.error('Jquery wanst loaded in your project.');
     return;
   }
+  $('head').append('<meta charset="utf-8" />');
 
   var emojiConfiguration ={
     opacity: 0.3,
@@ -26,9 +27,10 @@
     event: 'click',
     disabled: false,
     count: 0,
-    UTF8: true,
     color: '',
-    debug: false
+    animation: '', //shake, shake-slow, shake-hard, shake-horizontal, shake-vertical, shake-rotate, shake-opacity, shake-crazy, shake-chunk
+    debug: false,
+
   };
   var configuration;
 
@@ -41,7 +43,7 @@
         configuration.disabled = false;
       } else if (options.toLowerCase()  == 'setvalue'){
         configuration.value = value;
-        recreateEmojiTable(this, configuration, configuration.emojis, configuration.width, value);
+        recreateEmojiTable(this, configuration, configuration.emojis, value);
       } else if (options.toLowerCase()  == 'getvalue'){
         return configuration.value;
       }
@@ -51,10 +53,13 @@
     configuration = $.extend(emojiConfiguration, options);
     configuration.event = configuration.event.toLowerCase();
 
+    if(configuration.emojis.length == 0){
+      console.error('You have defined a empty emoji array.');
+    }
     if(configuration.value > configuration.count && configuration.value > configuration.emojis.length && configuration.debug){
       console.error('The default value is higher to the number of elements in the array (or count property in case you have it defined).');
     }
-    if(configuration.event != 'click' || configuration.event != 'mouseover'){
+    if(configuration.event != 'click' || configuration.event != 'mouseover' || configuration.event != ''){
       configuration.event = 'click';
       console.warn('Wrong event name. Automatically overrode to "click" event.');
     }
@@ -78,21 +83,17 @@
       configuration.emojis = tempEmojiArray;
     }
 
-    if(configuration.UTF8){
-      $('head').append('<meta charset="utf-8" />');
-    }
-
     var element = this;
     var value = configuration.value;
     this.each( function() {
-      recreateEmojiTable(element, configuration, configuration.emojis, configuration.width, value);
+      recreateEmojiTable(element, configuration, configuration.emojis, value);
     });
 
     $(element).delegate( '.emoji-table span', configuration.event, function(){
       if(configuration.disabled)
         return;
       var currentState = $(this).closest('table').html() ;
-      recreateEmojiTable(element, configuration, configuration.emojis, configuration.width, $(this).attr('value'), function(currentValue){
+      recreateEmojiTable(element, configuration, configuration.emojis, $(this).attr('value'), function(currentValue){
         configuration.value = currentValue;
         if(configuration.callback != undefined){
           configuration.callback(configuration.event, configuration.value);
@@ -123,16 +124,15 @@
     return false;
   }
 
-  function recreateEmojiTable(element, conf, emojis, width, value, callback) {
+  function recreateEmojiTable(element, conf, emojis, value, callback) {
+    console.log(conf);
     var tds = '';
     $(element).empty();
     jQuery.each( emojis, function( i, val ) {
-      val = checkIfIsResource(val, width);
-      console.log(val);
       if((value -1) < i){
-        tds+='<td><span value="' + (i+1) + '" style="opacity: ' +  conf.opacity + '; font-size: ' + conf.width + '; color: ' + conf.color + '">' + val + '</span></td>';
+        tds+='<td><span class="' + conf.animation + '" value="' + (i+1) + '" style="opacity: ' +  conf.opacity + '; font-size: ' + conf.width + '; color: ' + conf.color + '">' + val + '</span></td>';
       } else{
-        tds+='<td><span value="' + (i+1) + '" style="font-size: ' +  conf.width + '; color: ' +  conf.color + '">' + val + '</span></td>';
+        tds+='<td><span class="' + conf.animation + '" value="' + (i+1) + '" style="font-size: ' +  conf.width + '; color: ' +  conf.color + '">' + val + '</span></td>';
       }
       $(element).html('<table class="emoji-table"><tbody><tr>' + tds + '</tr></tbody></table>');
     });
@@ -141,10 +141,6 @@
     if(callback!= undefined){
       callback(value);
     }
-  }
-
-  function checkIfIsResource(path, width) {
-    return ( path.indexOf('.') > -1 ) ? '<img src="' + path + '" width="' + width + '" />' : path;
   }
 
   var emotionsArray = {
