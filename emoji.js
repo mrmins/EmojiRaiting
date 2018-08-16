@@ -50,7 +50,7 @@
       return;
     }
 
-    configuration = $.extend(emojiConfiguration, options);
+    configuration = $.extend({}, emojiConfiguration, options);
     configuration.event = configuration.event.toLowerCase();
 
     if(configuration.emojis.length == 0 && configuration.debug){
