@@ -83,7 +83,7 @@ $("#emoji-div").emoji({ width: 50 }); //As number
 
 **Do you want to set an initial value?**
 ```
-$("#emoji-div").emoji({ val: 4 });
+$("#emoji-div").emoji({ value: 4 });
 ```
 
 **Do you want to set color to your emojis?**
