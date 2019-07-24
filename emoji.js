@@ -28,6 +28,7 @@
     disabled: false,
     count: 0,
     color: '',
+    title: '',
     animation: '', //shake, shake-slow, shake-hard, shake-horizontal, shake-vertical, shake-rotate, shake-opacity, shake-crazy, shake-chunk
     debug: false,
 
@@ -111,7 +112,7 @@
 
     });
 
-    var style = $('<style>.emoji-table span:hover { cursor: pointer; }</style>');
+    var style = $('<style>.emoji-table span:hover { cursor: pointer; } .emoji-title { text-align: center; }</style>');
     $('html > head').append(style);
   }
 
@@ -138,9 +139,17 @@
     $(element).empty();
     jQuery.each( emojis, function( i, val ) {
       if((value -1) < i){
-        tds+='<td><span class="' + conf.animation + '" value="' + (i+1) + '" style="opacity: ' +  conf.opacity + '; font-size: ' + conf.width + '; color: ' + conf.color + '">' + val + '</span></td>';
+        tds+='<td><span class="' + conf.animation + '" value="' + (i+1) + '" style="opacity: ' +  conf.opacity + '; font-size: ' + conf.width + '; color: ' + conf.color + '">' + val + '</span>';
+        if(conf.title && conf.title.length == emojis.length) {
+          tds+='<p class="emoji-title">'+conf.title[i]+'</p>';
+        }
+        tds+='</td>';
       } else{
-        tds+='<td><span class="' + conf.animation + '" value="' + (i+1) + '" style="font-size: ' +  conf.width + '; color: ' +  conf.color + '">' + val + '</span></td>';
+        tds+='<td><span class="' + conf.animation + '" value="' + (i+1) + '" style="font-size: ' +  conf.width + '; color: ' +  conf.color + '">' + val + '</span>';
+        if(conf.title && conf.title.length == emojis.length) {
+          tds+='<p class="emoji-title">'+conf.title[i]+'</p>';
+        }
+        tds+='</td>';
       }
       $(element).html('<table class="emoji-table"><tbody><tr>' + tds + '</tr></tbody></table>');
     });
