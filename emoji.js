@@ -12,7 +12,7 @@
  * License: GNU General Public License v3.0
  */
 
-;(function($) {
+ ;(function($) {
   if( !window.jQuery ){
     console.error('Jquery wanst loaded in your project.');
     return;
@@ -31,6 +31,7 @@
     title: '',
     animation: '', //shake, shake-slow, shake-hard, shake-horizontal, shake-vertical, shake-rotate, shake-opacity, shake-crazy, shake-chunk
     debug: false,
+    starRating: true
 
   };
   var configuration;
@@ -138,7 +139,7 @@
     var tds = '';
     $(element).empty();
     jQuery.each( emojis, function( i, val ) {
-      if((value -1) < i){
+      if((conf.starRating && (value -1) < i) || (!conf.starRating && (value -1) != i)){
         tds+='<td><span class="' + conf.animation + '" value="' + (i+1) + '" style="opacity: ' +  conf.opacity + '; font-size: ' + conf.width + '; color: ' + conf.color + '">' + val + '</span>';
         if(conf.title && conf.title.length == emojis.length) {
           tds+='<p class="emoji-title">'+conf.title[i]+'</p>';
