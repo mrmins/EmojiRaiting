@@ -165,7 +165,8 @@ $("#emoji-div").emoji({
     animation: '', //shake, shake-slow, shake-hard, shake-horizontal, shake-vertical, shake-rotate, shake-opacity, shake-crazy, shake-chunk
     UTF8: true, //By default, the EmojiRaiting plugin insert the meta tag to your code.
     callback: myFunctionName, //Returns event and currentValue in the change event
-    debug: false //Boolean value
+    debug: false, //Boolean value
+    starRating: true //Enables star rating style
 });
 ```
 
